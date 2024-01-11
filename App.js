@@ -31,6 +31,5 @@ const app = express()
 app.get("/home", (req,res) => {
     res.send("tes")
 })
-console.log(`adwad`)
 
 app.listen(8000, ()=> console.log("server is up "))
