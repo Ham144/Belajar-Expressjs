@@ -3,6 +3,7 @@ import express from "express"
 // import teachers from "./Teachers.js"
 // import router from "./routes/Students.js"
 // import products from "./products.js"
+import showCredenstials from "./logs/credentials.js"
 const app = express()
 // app.use("/students", students)
 // app.use("/teachers", teachers)
@@ -24,12 +25,10 @@ const app = express()
 // app.use("/Options", router)
 // app.get("/shop" ,(req,res) =>{
 //     const {category, id} = req.query
-//     res.send(`the category you pick is ${category} and the id = ${id}`)
+//     res.send(`the category you pick is ${category} and the id = ${id}`) 
     
 // }) 
 
-app.get("/home", (req,res) => {
-    res.send("tes")
-})
+
 
 app.listen(8000, ()=> console.log("server is up "))
