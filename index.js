@@ -6,33 +6,15 @@
 //==================================
 // import products from "./products.js"
 // import showCredenstials from "./logs/credentials.js"
-import express from "express"
-import path from "path"
+import express from 'express'
+import {join} from "path"
+import route from "./routes2/router.js"
 const app = express()
+app.set('view engine','ejs')
 
-app.use(express.static("./public"))
-app.get("/" ,(req,res) =>{
-    res.sendFile(path.join(process.cwd(), "./public.index.html"))
-})
+// app.use(express.static(join(process.cwd(), "public")))
 
-app.get("/about", (req,res) => {
-    res.send("h1>ini adalah about page")
-})
-
-app.route("/" )
-.get(("/home", (req,res) => console.log(`Show all of them`)))
-.post(("/create", (req,res) => console.log(`add new`)))
-.put(("/update", (req,res) => console.log(`update data`)))
-.delete(("/delete", (req,res) => console.log(`delete data`)))
+app.use("/", route)
 
 
-
-
-
-
-
-
-
-
-
-app.listen(8000, () =>{console.log(`server is ready`)})
+app.listen("8000", ()=> console.log(`server is ready`))
